@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Выбор Судьбы</title>
+  <style>
+    body {
+      background-color: #2d1e3f;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2d1e3f;
+      margin: 0;
+      padding: 40px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background-color: #f5e3c3;
+      border-radius: 20px;
+      width: 1200px;
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 60px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .right {
+      width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .right img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 12px 20px;
+      font-size: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+      border: 2px solid #2d1e3f;
+      border-radius: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2d1e3f;
+      color: white;
+      padding: 12px 25px;
+      margin: 10px 10px 10px 0;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #472c6a;
+    }
+
+    .category-buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .fortune-wheel {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>ВЫБОР СУДЬБЫ</h1>
+      <h2>На какой вопрос ответить?</h2>
+      <input type="text" placeholder="Что поесть?"><br>
+      <a class="button" href="eda.html">СЛУЧАЙНЫЙ ВАРИАНТ</a>
+
+      <div class="category-buttons">
+        <a class="button" href="eda.html">Еда</a>
+        <a class="button" href="kino.html">Кино</a>
+        <a class="button" href="knigi.html">Книги</a>
+        <a class="button" href="otdyh.html">Отдых</a>
+        <a class="button" href="priklyucheniya.html">Приключения</a>
+      </div>
+
+      <div class="fortune-wheel">
+        <a class="button" href="random.html">ПОКРУТИТЬ КОЛЕСО СУДЬБЫ</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="white-cat.png" alt="Белый кот">
+    </div>
+  </div>
+</body>
+</html>
