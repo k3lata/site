@@ -1,0 +1,169 @@
+<!-- kino.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Категория: Кино</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fbeac5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2d1e3f;
+      color: white;
+      padding: 15px 25px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #2d1e3f;
+      min-width: 160px;
+      z-index: 1;
+      border-radius: 8px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3f2f5c;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2d1e3f;
+      margin-bottom: 20px;
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background-color: #2d1e3f;
+      color: white;
+      padding: 14px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #442a60;
+    }
+
+    .btn.selected {
+      background-color: #624488;
+    }
+
+    #goButton {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">НАЗАД</a>
+    <div class="dropdown">
+      <a href="#">КАТЕГОРИИ</a>
+      <div class="dropdown-content">
+        <a href="eda.html">Еда</a>
+        <a href="knigi.html">Книги</a>
+        <a href="otdyh.html">Отдых</a>
+        <a href="priklyucheniya.html">Приключения</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Выбери жанр</h2>
+    <div class="buttons-group" id="genreGroup">
+      <button class="btn" data-genre="comedy">Комедия</button>
+      <button class="btn" data-genre="action">Боевик</button>
+      <button class="btn" data-genre="romance">Мелодрама</button>
+      <button class="btn" data-genre="horror">Ужасы</button>
+      <button class="btn" data-genre="fantasy">Фэнтези</button>
+      <button class="btn" data-genre="animation">Мультфильмы</button>
+    </div>
+
+    <h2>Выбери длительность</h2>
+    <div class="buttons-group" id="lengthGroup">
+      <button class="btn" data-length="short">До 1 часа</button>
+      <button class="btn" data-length="medium">1–2 часа</button>
+      <button class="btn" data-length="series">Многосерийный</button>
+    </div>
+
+    <button class="btn" id="goButton">ПОКАЗАТЬ РЕЗУЛЬТАТ</button>
+  </div>
+
+  <script>
+    let selectedGenre = null;
+    let selectedLength = null;
+
+    document.querySelectorAll('#genreGroup .btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#genreGroup .btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedGenre = btn.getAttribute('data-genre');
+      });
+    });
+
+    document.querySelectorAll('#lengthGroup .btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#lengthGroup .btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedLength = btn.getAttribute('data-length');
+      });
+    });
+
+    document.getElementById('goButton').addEventListener('click', () => {
+      if (selectedGenre && selectedLength) {
+        const url = result.html?type=movie&genre=${selectedGenre}&length=${selectedLength};
+        window.location.href = url;
+      } else {
+        alert("Выбери жанр и длительность!");
+      }
+    });
+  </script>
+
+</body>
+</html>
